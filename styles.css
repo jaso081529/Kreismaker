@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #222;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.controls {
+  padding: 1rem;
+  overflow-y: auto;
+  background: #fafafa;
+}
+.controls h2 {
+  margin-top: 0;
+}
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.control-row > div {
+  flex: 1 1 200px;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+.control-row label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.control-row input[type="text"],
+.control-row input[type="number"],
+.control-row input[type="color"],
+.control-row select {
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#status-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4caf50;
+  opacity: 0;
+  transition: opacity 0.2s;
+}

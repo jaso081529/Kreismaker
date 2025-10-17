@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <title>Kreis-Logo-Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="preview" id="preview-wrapper">
+      <div id="status-indicator"></div>
+      <svg id="previewSVG" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path id="path1" d="" />
+          <path id="path2" d="" />
+          <path id="path3" d="" />
+        </defs>
+        <circle id="outerRing" cx="300" cy="300" r="280" fill="none" stroke="#000" stroke-width="0" />
+        <circle id="innerRing" cx="300" cy="300" r="200" fill="none" stroke="#000" stroke-width="0" />
+        <text id="textLayer1" fill="#000" font-family="Arial" font-size="36" letter-spacing="1">
+          <textPath href="#path1" startOffset="0" side="left" />
+        </text>
+        <text id="textLayer2" fill="#000" font-family="Arial" font-size="36" letter-spacing="1">
+          <textPath href="#path2" startOffset="0" side="left" />
+        </text>
+        <text id="textLayer3" fill="#000" font-family="Arial" font-size="36" letter-spacing="1">
+          <textPath href="#path3" startOffset="0" side="left" />
+        </text>
+        <g id="centerImageGroup"></g>
+      </svg>
+    </div>
+    <div class="controls">
+      <h2>Einstellungen</h2>
+      <div class="control-row">
+        <div>
+          <label for="textInput1">Text 1 (oben)</label>
+          <input type="text" id="textInput1" placeholder="z.B. Stammtisch – Finsterbrunner – Dummbabbler" />
+        </div>
+        <div>
+          <label for="radius1">Radius 1 (px)</label>
+          <input type="number" id="radius1" min="50" max="300" value="280" />
+        </div>
+        <div>
+          <label for="angle1">Startwinkel 1 (°)</label>
+          <input type="number" id="angle1" min="0" max="360" value="0" />
+        </div>
+        <div>
+          <label for="sweep1">Bogenspannung 1 (°)</label>
+          <input type="number" id="sweep1" min="0" max="360" value="360" />
+        </div>
+        <div>
+          <label for="fontSize1">Schriftgröße 1</label>
+          <input type="number" id="fontSize1" min="8" max="200" value="36" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="textInput2">Text 2 (unten)</label>
+          <input type="text" id="textInput2" placeholder="optional" />
+        </div>
+        <div>
+          <label for="radius2">Radius 2 (px)</label>
+          <input type="number" id="radius2" min="50" max="300" value="230" />
+        </div>
+        <div>
+          <label for="angle2">Startwinkel 2 (°)</label>
+          <input type="number" id="angle2" min="0" max="360" value="0" />
+        </div>
+        <div>
+          <label for="sweep2">Bogenspannung 2 (°)</label>
+          <input type="number" id="sweep2" min="0" max="360" value="360" />
+        </div>
+        <div>
+          <label for="fontSize2">Schriftgröße 2</label>
+          <input type="number" id="fontSize2" min="8" max="200" value="36" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="textInput3">Text 3 (optional)</label>
+          <input type="text" id="textInput3" placeholder="optional" />
+        </div>
+        <div>
+          <label for="radius3">Radius 3 (px)</label>
+          <input type="number" id="radius3" min="50" max="300" value="180" />
+        </div>
+        <div>
+          <label for="angle3">Startwinkel 3 (°)</label>
+          <input type="number" id="angle3" min="0" max="360" value="0" />
+        </div>
+        <div>
+          <label for="sweep3">Bogenspannung 3 (°)</label>
+          <input type="number" id="sweep3" min="0" max="360" value="360" />
+        </div>
+        <div>
+          <label for="fontSize3">Schriftgröße 3</label>
+          <input type="number" id="fontSize3" min="8" max="200" value="36" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="outerRingWidth">Außenring Breite (px)</label>
+          <input type="number" id="outerRingWidth" min="0" max="100" value="0" />
+        </div>
+        <div>
+          <label for="outerRingColor">Außenring Farbe</label>
+          <input type="color" id="outerRingColor" value="#000000" />
+        </div>
+        <div>
+          <label for="innerRingWidth">Innenring Breite (px)</label>
+          <input type="number" id="innerRingWidth" min="0" max="100" value="0" />
+        </div>
+        <div>
+          <label for="innerRingColor">Innenring Farbe</label>
+          <input type="color" id="innerRingColor" value="#000000" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="textColor">Textfarbe</label>
+          <input type="color" id="textColor" value="#000000" />
+        </div>
+        <div>
+          <label for="fontSelect">Schriftart</label>
+          <select id="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Impact">Impact</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+          </select>
+        </div>
+        <div>
+          <label for="letterSpacing">Buchstabenabstand</label>
+          <input type="number" id="letterSpacing" min="0" max="50" value="1" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="centerImage">Mittel-Icon (PNG/JPG/SVG)</label>
+          <input type="file" id="centerImage" accept="image/*" />
+        </div>
+        <div>
+          <label for="centerImageSize">Icon-Größe (%)</label>
+          <input type="number" id="centerImageSize" min="10" max="100" value="60" />
+        </div>
+      </div>
+      <div class="control-row">
+        <div>
+          <label for="exportWidth">Exportbreite (px)</label>
+          <input type="number" id="exportWidth" min="500" max="6000" value="1200" />
+        </div>
+        <div>
+          <label for="dpi">DPI</label>
+          <input type="number" id="dpi" min="72" max="1200" value="300" />
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button id="exportPNG">PNG exportieren</button>
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button id="exportSVG">SVG exportieren</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
